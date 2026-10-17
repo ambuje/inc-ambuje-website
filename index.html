@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inc.ambuje.me | Enterprise Agentic AI & Custom Model Engineering</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdfa',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            900: '#134e4a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card:hover {
+            border-color: rgba(20, 184, 166, 0.4);
+            box-shadow: 0 0 25px -5px rgba(20, 184, 166, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased selection:bg-teal-500 selection:text-white">
+
+    <!-- Top Navigation Header -->
+    <header class="sticky top-0 z-50 glass-card border-b border-slate-800/80 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-teal-500 to-emerald-400 flex items-center justify-center text-slate-950 font-bold text-xl shadow-lg shadow-teal-500/20">
+                    A
+                </div>
+                <div>
+                    <a href="#" class="text-xl font-bold tracking-tight text-white hover:text-teal-400 transition-colors">inc.ambuje.me</a>
+                    <span class="hidden sm:inline-block ml-3 px-2.5 py-0.5 text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full">
+                        ● Available for Q4 Engagements
+                    </span>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                <a href="#services" class="hover:text-teal-400 transition-colors">Services</a>
+                <a href="#workspace" class="hover:text-teal-400 transition-colors">Workspace Integration</a>
+                <a href="#contact" class="hover:text-teal-400 transition-colors">Contact</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <a href="https://workspace.ambuje.me/" target="_blank" class="hidden sm:inline-flex items-center px-4 py-2 text-sm font-semibold text-slate-200 bg-slate-800/80 hover:bg-slate-700 border border-slate-700 rounded-lg transition-all">
+                    <span>Workspace Portal</span>
+                    <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
+                </a>
+                <a href="mailto:hello@ambujegupta.com" class="px-4 py-2 text-sm font-semibold text-slate-950 bg-gradient-to-r from-teal-400 to-emerald-400 hover:from-teal-300 hover:to-emerald-300 rounded-lg shadow-lg shadow-teal-500/20 transition-all transform hover:-translate-y-0.5">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero & Search Bar Section -->
+    <section class="relative pt-20 pb-16 px-6 max-w-7xl mx-auto text-center">
+        <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs text-teal-400 font-medium mb-6">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+            <span>Enterprise AI Engineering & Architecture</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto">
+            Production-Grade AI Systems & <span class="bg-gradient-to-r from-teal-400 via-emerald-400 to-cyan-400 bg-clip-text text-transparent">Custom Engineering</span>
+        </h1>
+
+        <p class="mt-6 text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto font-normal">
+            Transitioning enterprise workflows from generic LLM API wrappers into high-throughput, domain-adapted model pipelines and autonomous agent networks.
+        </p>
+
+        <!-- Interactive Search Input -->
+        <div class="mt-10 max-w-2xl mx-auto relative">
+            <div class="relative flex items-center">
+                <i data-lucide="search" class="w-5 h-5 absolute left-4 text-slate-400 pointer-events-none"></i>
+                <input 
+                    type="text" 
+                    id="search-input"
+                    placeholder="Search services (e.g., Fine-Tuning, vLLM, Evaluation, Agentic AI)..." 
+                    class="w-full pl-12 pr-16 py-4 bg-slate-900/90 border border-slate-700/80 rounded-2xl text-slate-100 placeholder-slate-500 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 shadow-2xl transition-all"
+                >
+                <kbd class="hidden sm:inline-block absolute right-4 px-2 py-1 text-xs font-mono text-slate-400 bg-slate-800 border border-slate-700 rounded">
+                    /
+                </kbd>
+            </div>
+        </div>
+
+        <!-- Category Filter Pills -->
+        <div class="mt-8 flex flex-wrap justify-center gap-2 max-w-3xl mx-auto" id="filter-pills">
+            <button data-filter="all" class="filter-pill active px-4 py-2 text-xs font-semibold rounded-xl bg-teal-500 text-slate-950 shadow-md transition-all">All Pillars</button>
+            <button data-filter="Strategy" class="filter-pill px-4 py-2 text-xs font-semibold rounded-xl bg-slate-900 text-slate-400 border border-slate-800 hover:border-slate-700 transition-all">Strategy & Governance</button>
+            <button data-filter="Fine-Tuning" class="filter-pill px-4 py-2 text-xs font-semibold rounded-xl bg-slate-900 text-slate-400 border border-slate-800 hover:border-slate-700 transition-all">Model Adaptation</button>
+            <button data-filter="Inference" class="filter-pill px-4 py-2 text-xs font-semibold rounded-xl bg-slate-900 text-slate-400 border border-slate-800 hover:border-slate-700 transition-all">GPU Inference</button>
+            <button data-filter="Evaluation" class="filter-pill px-4 py-2 text-xs font-semibold rounded-xl bg-slate-900 text-slate-400 border border-slate-800 hover:border-slate-700 transition-all">Safety & Evaluation</button>
+            <button data-filter="Agents" class="filter-pill px-4 py-2 text-xs font-semibold rounded-xl bg-slate-900 text-slate-400 border border-slate-800 hover:border-slate-700 transition-all">Agent Engineering</button>
+        </div>
+    </section>
+
+    <!-- Services Grid Section -->
+    <section id="services" class="py-12 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="services-grid">
+            
+            <!-- Card 1: AI Consulting -->
+            <div class="service-card glass-card rounded-2xl p-8 flex flex-col justify-between transition-all duration-300" data-category="Strategy" data-title="Strategic AI Transformation & Governance" data-tags="strategy governance audit roi EU AI Act compliance" data-description="Data readiness audits, ROI modeling, vendor evaluation, EU AI Act compliance frameworks, and agentic workflow redesign.">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 mb-6">
+                        <i data-lucide="compass" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-teal-400">Strategy Pillar</span>
+                    <h3 class="text-xl font-bold text-white mt-1 mb-3">Strategic AI Transformation & Governance</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Data readiness audits, economic ROI modeling, architecture selection, EU AI Act compliance frameworks, and agentic workflow redesign.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-2.5 py-1 text-xs bg-slate-800/80 text-slate-300 rounded-md border border-slate-700">EU AI Act</span>
+                        <span class="px-2.5 py-1 text-xs bg-slate-800/80 text-slate-300 rounded-md border border-slate-700">ROI Frameworks</span>
+                        <span class="px-2.5 py-1 text-xs bg-slate-800/80 text-slate-300 rounded-md border border-slate-700">Workflow Audit</span>
+                    </div>
+                </div>
+                <a href="https://workspace.ambuje.me/?service=strategy" target="_blank" class="w-full inline-flex items-center justify-center px-4 py-2.5 text-sm font-semibold text-teal-400 bg-teal-500/10 hover:bg-teal-500/20 border border-teal-500/30 rounded-xl transition-all">
+                    <span>Explore Solution</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
+            </div>
+
+            <!-- Card 2: Fine-Tuning -->
+            <div class="service-card glass-card rounded-2xl p-8 flex flex-col justify-between transition-all duration-300" data-category="Fine-Tuning" data-title="Parameter-Efficient Adaptation & Distillation" data-tags="fine-tuning lora qlora pytorch distillation 70b 8b custom models" data-description="LoRA/QLoRA training pipelines, synthetic dataset curation, domain-specific instruction tuning, and 70B-to-8B model distillation.">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-6">
+                        <i data-lucide="sliders" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Adaptation Pillar</span>
+                    <h3 class="text-xl font-bold text-white mt-1 mb-3">Parameter-Efficient Adaptation & Distillation</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        LoRA/QLoRA training pipelines, synthetic data generation, domain instruction tuning, and 70B-to-8B model distillation.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-2.5 py-1 text-xs bg-slate-800/80 text-slate-300 rounded-md border border-slate-700">PyTorch</span>
+                        <span class="px-2.5 py-1 text-xs bg-slate-800/80 text-slate-300 rounded-md border border-slate-700">LoRA / QLoRA</span>
+                        <span class="px-2.5 py-1 text-xs bg-slate-800/80 text-slate-300 rounded-md border border-slate-700">Distillation</span>
+                    </div>
+                </div>
+                <a href="https://workspace.ambuje.me/?service=fine-tuning" target="_blank" class="w-full inline-flex items-center justify-center px-4 py-2.5 text-sm font-semibold text-emerald-400 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 rounded-xl transition-all">
+                    <span>Explore Solution</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
+            </div>
+
+            <!-- Card 3: AI Inference -->
+            <div class="service-card glass-card rounded-2xl p-8 flex flex-col justify-between transition-all duration-300" data-category="Inference" data-title="Enterprise Inference & GPU Optimization" data-tags="inference vllm tensorrt-llm quantization awq fp8 gpu latency sovereign" data-description="vLLM and TensorRT-LLM cluster deployment, FP8/AWQ quantization, sub-100ms latency minimization, and sovereign cloud setups.">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-6">
+                        <i data-lucide="zap" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Inference Pillar</span>
+                    <h3 class="text-xl font-bold text-white mt-1 mb-3">Enterprise Inference & GPU Optimization</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        vLLM / TensorRT-LLM setup, FP8 / AWQ quantization, sub-100ms latency tuning, and secure sovereign cloud deployment.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-2.5 py-1 text-xs bg-slate-800/80 text-slate-300 rounded-md border border-slate-700">vLLM</span>
+                        <span class="px-2.5 py-1 text-xs bg-slate-800/80 text-slate-300 rounded-md border border-slate-700">TensorRT-LLM</span>
+                        <span class="px-2.5 py-1 text-xs bg-slate-800/80 text-slate-300 rounded-md border border-slate-700">AWQ / FP8</span>
+                    </div>
+                </div>
+                <a href="https://workspace.ambuje.me/?service=inference" target="_blank" class="w-full inline-flex items-center justify-center px-4 py-2.5 text-sm font-semibold text-cyan-400 bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 rounded-xl transition-all">
+                    <span>Explore Solution</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
+            </div>
+
+            <!-- Card 4: AI Evaluation -->
+            <div class="service-card glass-card rounded-2xl p-8 flex flex-col justify-between transition-all duration-300" data-category="Evaluation" data-title="Automated Evaluation & Safety Red-Teaming" data-tags="evaluation red-teaming safety hallucination context-bench benchmark risk" data-description="Contamination-proof benchmark harnesses, Context-Bench evaluation, hallucination and drift monitoring, and adversarial red-teaming.">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-6">
+                        <i data-lucide="shield-check" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-purple-400">Safety Pillar</span>
+                    <h3 class="text-xl font-bold text-white mt-1 mb-3">Automated Evaluation & Safety Red-Teaming</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Contamination-proof benchmark suites, Context-Bench evaluation, hallucination detection, and red-teaming.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-2.5 py-1 text-xs bg-slate-800/80 text-slate-300 rounded-md border border-slate-700">Context-Bench</span>
+                        <span class="px-2.5 py-1 text-xs bg-slate-800/80 text-slate-300 rounded-md border border-slate-700">Red-Teaming</span>
+                        <span class="px-2.5 py-1 text-xs bg-slate-800/80 text-slate-300 rounded-md border border-slate-700">Safety Suites</span>
+                    </div>
+                </div>
+                <a href="https://workspace.ambuje.me/?service=evaluation" target="_blank" class="w-full inline-flex items-center justify-center px-4 py-2.5 text-sm font-semibold text-purple-400 bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/30 rounded-xl transition-all">
+                    <span>Explore Solution</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
+            </div>
+
+            <!-- Card 5: Agent Engineering -->
+            <div class="service-card glass-card rounded-2xl p-8 flex flex-col justify-between transition-all duration-300" data-category="Agents" data-title="Multi-Agent Orchestration & Tool Integration" data-tags="agents multi-agent tool calling function calling stateful memory context engineering" data-description="Multi-agent orchestration, function calling, human-in-the-loop control layers, and stateful memory management.">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-6">
+                        <i data-lucide="bot" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Agentic Pillar</span>
+                    <h3 class="text-xl font-bold text-white mt-1 mb-3">Multi-Agent Orchestration & Tool Integration</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Context engineering, enterprise API function calling, stateful memory management, and human-in-the-loop controls.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-2.5 py-1 text-xs bg-slate-800/80 text-slate-300 rounded-md border border-slate-700">Agentic Workflows</span>
+                        <span class="px-2.5 py-1 text-xs bg-slate-800/80 text-slate-300 rounded-md border border-slate-700">Function Calling</span>
+                        <span class="px-2.5 py-1 text-xs bg-slate-800/80 text-slate-300 rounded-md border border-slate-700">Stateful Memory</span>
+                    </div>
+                </div>
+                <a href="https://workspace.ambuje.me/?service=agents" target="_blank" class="w-full inline-flex items-center justify-center px-4 py-2.5 text-sm font-semibold text-amber-400 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-xl transition-all">
+                    <span>Explore Solution</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- No Search Results State -->
+        <div id="no-results" class="hidden text-center py-16">
+            <i data-lucide="search-x" class="w-12 h-12 mx-auto text-slate-600 mb-4"></i>
+            <h3 class="text-lg font-semibold text-slate-300">No matching AI service found</h3>
+            <p class="text-slate-500 text-sm mt-1">Need a specialized technical capability? Contact founder directly.</p>
+            <a href="mailto:hello@ambujegupta.com" class="inline-block mt-4 text-xs font-semibold text-teal-400 hover:underline">
+                Email hello@ambujegupta.com &rarr;
+            </a>
+        </div>
+    </section>
+
+    <!-- Workspace & Founder Banner Section -->
+    <section id="workspace" class="py-16 px-6 max-w-7xl mx-auto">
+        <div class="glass-card rounded-3xl p-8 sm:p-12 relative overflow-hidden border border-slate-800">
+            <div class="max-w-3xl relative z-10">
+                <span class="text-xs font-bold uppercase tracking-widest text-teal-400">Direct Workspace Access</span>
+                <h2 class="text-3xl font-extrabold text-white mt-2 mb-4">Direct Workspace Deep-Linking & Advisory</h2>
+                <p class="text-slate-400 text-base leading-relaxed mb-8">
+                    Every service component on <strong class="text-slate-200">inc.ambuje.me</strong> links directly into <strong class="text-slate-200">workspace.ambuje.me</strong>. Submit inquiries straight to founder email or launch pre-scoped technical briefs on our board.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="mailto:hello@ambujegupta.com" class="px-6 py-3 text-sm font-semibold text-slate-950 bg-teal-400 hover:bg-teal-300 rounded-xl transition-all shadow-lg shadow-teal-500/20">
+                        Contact hello@ambujegupta.com
+                    </a>
+                    <a href="https://workspace.ambuje.me/" target="_blank" class="px-6 py-3 text-sm font-semibold text-slate-200 bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-xl transition-all">
+                        Launch Workspace Portal
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="border-t border-slate-800/80 py-12 px-6 max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <div>
+            <p>&copy; 2026 inc.ambuje.me — All rights reserved.</p>
+            <p class="mt-1 text-slate-600">Enterprise Agentic AI Consultancy & Model Engineering</p>
+        </div>
+        <div class="flex items-center space-x-6">
+            <a href="mailto:hello@ambujegupta.com" class="hover:text-teal-400 transition-colors">hello@ambujegupta.com</a>
+            <a href="https://workspace.ambuje.me/" target="_blank" class="hover:text-teal-400 transition-colors">workspace.ambuje.me</a>
+        </div>
+    </footer>
+
+    <!-- Client-Side Search & Filter Logic -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        const searchInput = document.getElementById('search-input');
+        const cards = document.querySelectorAll('.service-card');
+        const filterPills = document.querySelectorAll('.filter-pill');
+        const noResults = document.getElementById('no-results');
+
+        let activeFilter = 'all';
+
+        // Hotkey: press '/' or 'Cmd+K' to focus search
+        document.addEventListener('keydown', (e) => {
+            if (e.key === '/' || (e.metaKey && e.key === 'k')) {
+                if (document.activeElement !== searchInput) {
+                    e.preventDefault();
+                    searchInput.focus();
+                }
+            }
+        });
+
+        function filterServices() {
+            const query = searchInput.value.toLowerCase().trim();
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                const title = card.getAttribute('data-title').toLowerCase();
+                const tags = card.getAttribute('data-tags').toLowerCase();
+                const desc = card.getAttribute('data-description').toLowerCase();
+
+                const matchesFilter = (activeFilter === 'all' || category === activeFilter);
+                const matchesQuery = query === '' || title.includes(query) || tags.includes(query) || desc.includes(query);
+
+                if (matchesFilter && matchesQuery) {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            if (visibleCount === 0) {
+                noResults.classList.remove('hidden');
+            } else {
+                noResults.classList.add('hidden');
+            }
+        }
+
+        searchInput.addEventListener('input', filterServices);
+
+        filterPills.forEach(pill => {
+            pill.addEventListener('click', () => {
+                filterPills.forEach(p => {
+                    p.classList.remove('bg-teal-500', 'text-slate-950', 'shadow-md');
+                    p.classList.add('bg-slate-900', 'text-slate-400', 'border', 'border-slate-800');
+                });
+
+                pill.classList.remove('bg-slate-900', 'text-slate-400', 'border', 'border-slate-800');
+                pill.classList.add('bg-teal-500', 'text-slate-950', 'shadow-md');
+
+                activeFilter = pill.getAttribute('data-filter');
+                filterServices();
+            });
+        });
+    </script>
+</body>
+</html>
